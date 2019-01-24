@@ -48,6 +48,8 @@ let () =
 
 Note that you need to require _import_ before any _deriving_ plugins, as otherwise _deriving_ will not be able to observe the complete type.
 
+If you use dune, an example would be: `(preprocess (staged_pps ppx_import ppx_deriving.std))`. Using `staged_pps` instead of `pps` is necessary, as explained [in dune's docs](https://dune.readthedocs.io/en/latest/dune-files.html#preprocessing-specification).
+
 ### [@with] replacements
 
 It is possible to syntactically replace a type with another while importing a definition. This can be used to import only a few types from a group, or to attach attributes to selected referenced types.
